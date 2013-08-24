@@ -1,0 +1,1 @@
+Search.setIndex({envversion:42,terms:{content:0},objtypes:{},objnames:{},filenames:["index"],titles:["How Do I Web Scale? 101"],objects:{},titleterms:{how:0,scale:0,web:0}})
