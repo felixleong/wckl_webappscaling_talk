@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# How Do I Web Scale? 101 documentation build configuration file, created by
+# Your Web App Is Not Web Scale 101 documentation build configuration file, created by
 # sphinx-quickstart on Sat Aug 24 22:35:00 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'How Do I Web Scale? 101'
+project = u'Your Web App Is Not Web Scale 101'
 copyright = u'2013, Seh Hui, Leong'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -131,7 +131,7 @@ html_static_path = ['_static']
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
-#html_use_smartypants = True
+html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
 #html_sidebars = {}
@@ -167,7 +167,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'HowDoIWebScale101doc'
+htmlhelp_basename = 'WebScale101doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -186,7 +186,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'HowDoIWebScale101.tex', u'How Do I Web Scale? 101 Documentation',
+  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
    u'Seh Hui, Leong', 'manual'),
 ]
 
@@ -216,8 +216,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'howdoiwebscale101', u'How Do I Web Scale? 101 Documentation',
-     [u'Seh Hui, Leong'], 1)
+  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
+  [u'Seh Hui, Leong'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'HowDoIWebScale101', u'How Do I Web Scale? 101 Documentation',
-   u'Seh Hui, Leong', 'HowDoIWebScale101', 'One line description of project.',
+  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
+   u'Seh Hui, Leong', 'YourWebAppIsNotWebScale101', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -251,7 +251,7 @@ texinfo_documents = [
 # -- Hieroglyph Slide Configuration ------------
 
 extensions += [
-    'hieroglyph',
+  'hieroglyph',
 ]
 
 slide_theme = 'slides'
@@ -260,10 +260,10 @@ slide_levels = 3
 # Place custom static assets in the _static directory and uncomment
 # the following lines to include them
 
-# slide_theme_options = {
-#     'custom_css': 'custom.css',
+slide_theme_options = {
+     'custom_css': 'custom.css',
 #     'custom_js': 'custom.js',
-# }
+}
 
 # ----------------------------------------------
 
