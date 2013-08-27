@@ -21,7 +21,6 @@ Seh Hui, Leong |br| August 2013, Webcamp KL
 .. toctree::
    :maxdepth: 2
 
-
 .. slide::
     :level: 2
 
@@ -34,15 +33,18 @@ Seh Hui, Leong |br| August 2013, Webcamp KL
 OMG Scaling Unicorn Magic!
 ==========================
 
+.. figure:: /_static/scaling-magic.png
+    :class: fill
+
 
 … unless when it is not
 -----------------------
 
+.. figure:: /_static/scaling-stupidz.png
+    :class: fill
+
 Why You Don't Need Scale… At First
 ----------------------------------
-
-Why?
-----
 
 * Because complexity will kill you sooner
 
@@ -82,15 +84,26 @@ Scaling Up A Simple Web App 101
 Where You Start
 ---------------
 
-Static Content – Someone Else Can Handle It
--------------------------------------------
+.. figure:: /_static/basic-setup.png
+    :class: fill
+
+Delegating Static Content Duties
+--------------------------------
+
+.. figure:: /_static/setup-with-cdn.png
+    :class: fill
 
 Adding A New Server
 -------------------
 
+.. figure:: /_static/setup-with-dbserver.png
+    :class: fill
+
 Let's Scale Horizontally!
 -------------------------
 
+.. figure:: /_static/setup-with-loadbalancer.png
+    :class: fill
 
 .. rst-class:: title-fill
 
@@ -105,11 +118,23 @@ More Tricks
 More Reads Than Writes
 ----------------------
 
+.. figure:: /_static/setup-with-multipledb.png
+    :class: fill
+
 Some Request Needs Long Processing Time?
 ----------------------------------------
 
-* Async
-* RabbitMQ
+* Use cases
+    * Reports *(especially one that uses a lot of data)*
+    * Blocking requests to third-party services *(like email, notification)*
+    * Media transcoding *(e.g. coverting video)*
+* Add asychronous requests to your web app/API
+
+Setting Up with Background Workers
+----------------------------------
+
+.. figure:: /_static/setup-with-mq.png
+    :class: fill
 
 What About NoSQL?
 -----------------
