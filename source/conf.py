@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Your Web App Is Not Web Scale 101 documentation build configuration file, created by
+# Scaling Your Web App – The Basics 101 documentation build configuration file, created by
 # sphinx-quickstart on Sat Aug 24 22:35:00 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Your Web App Is Not Web Scale 101'
+project = u'Scaling Your Web App – The Basics 101'
 copyright = u'2013, Seh Hui, Leong'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -186,7 +186,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
+  ('index', 'ScalingYourWebApp.tex', u'"Scaling Your Web App – The Basics" 101 Documentation',
    u'Seh Hui, Leong', 'manual'),
 ]
 
@@ -216,7 +216,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
+  ('index', 'ScalingYourWebApp.tex', u'"Scaling Your Web App – The Basics" 101 Documentation',
   [u'Seh Hui, Leong'], 1)
 ]
 
@@ -230,8 +230,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'YourWebAppIsNotWebScale101.tex', u'"Your Web App Is Not Web Scale" 101 Documentation',
-   u'Seh Hui, Leong', 'YourWebAppIsNotWebScale101', 'One line description of project.',
+  ('index', 'ScalingYourWebApp.tex', u'"Scaling Your Web App – The Basics" 101 Documentation',
+   u'Seh Hui, Leong', 'ScalingYourWebApp', 'One line description of project.',
    'Miscellaneous'),
 ]
 

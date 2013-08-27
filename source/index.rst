@@ -1,4 +1,4 @@
-.. How Do I Web Scale? 101 slides file, created by
+.. Scaling Your Web App – The Basics slides file, created by
    hieroglyph-quickstart on Sat Aug 24 22:35:00 2013.
 
 .. DEFINITIONS
@@ -7,9 +7,9 @@
 
     <br/>
 
-===================================
-“Your Web App Is Not Web Scale” 101
-===================================
+=================================
+Scaling Your Web App – The Basics
+=================================
 
 Seh Hui, Leong |br| August 2013, Webcamp KL
 
@@ -46,28 +46,37 @@ OMG Scaling Unicorn Magic!
 Why You Don't Need Scale… At First
 ----------------------------------
 
-* Because complexity will kill you sooner
+* Because **complexity will kill you sooner**
 
-    * Troubleshooting
-    * Time spent learning or writing tools
     * Initial set up time
+    * Time spent learning and/or writing tools
+    * Troubleshooting
     * Security audits and checking
 
-* Popular web frameworks makes it easier
+* Besides, popular web frameworks makes it easier
 
 What You Really Need To Do First
---------------------------------
+================================
 
-* Monitoring!
-* Munin
+.. figure:: /_static/munin.png
+    :class: fill
 
 Know Thy Enemy
 --------------
 
-* Concurrent connections ()
-* Request-to-response time
-* Development time (and sometimes cost)
+* Traffic/Concurrent connections
+* Request-to-response time *(look out for tasks that clogs your WSGI threads)*
+* Development time *(and sometimes cost)*
+* CPU load
+* … and more intertwining factors
 
+When To Scale?
+--------------
+
+* Identify the key bottleneck contributor
+* Look for slow requests or DB queries and optimize those first
+* Adding new servers should always be **the last resort to buy time** *(i.e. too complex to solve in short notice)*
+* Yes, servers are cheaper than developers, but all costs stacks
 
 .. rst-class:: title-fill
 
@@ -126,7 +135,7 @@ Some Request Needs Long Processing Time?
 
 * Use cases
     * Reports *(especially one that uses a lot of data)*
-    * Blocking requests to third-party services *(like email, notification)*
+    * Blocking requests due to third-party services *(like email, notification)*
     * Media transcoding *(e.g. coverting video)*
 * Add asychronous requests to your web app/API
 
@@ -140,7 +149,12 @@ What About NoSQL?
 -----------------
 
 * Using NoSQL database ≠ scalable solution
-* Right tool for the right job
+* **Right tool for the right job**
+    * Document-oriented stores
+    * Column-oriented stores
+    * Graph databases
+    * Key-value stores
+* Fast at querying data that suits the domains of the NoSQL database
 
 Congratulations! You're Now Smarter!
 ====================================
@@ -154,7 +168,7 @@ Today You've Learned
 ====================
 
 * Scaling should not be your first priority, monitoring is
-* Your three main reason to scale
+* When do you really need to scale
 * How to scale a simple web app
 * Additional weapons to make things speedier
 
