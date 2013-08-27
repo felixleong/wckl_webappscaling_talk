@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scaling Your Web App – The Basics &mdash; Scaling Your Web App – The Basics 101 2013.08.24 documentation</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/styles.css" type="text/css" />
+    <link rel="stylesheet" href="_static/slides.css" type="text/css" />
+    
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="top" title="Scaling Your Web App – The Basics 101 2013.08.24 documentation" href="#" /> 
+  </head>
+  <body>
+
+<section
+   id="slide_container"
+   class='slides layout-regular'>
+
+
+  <article class="slide level-1" id="scaling-your-web-app-the-basics">
+<h1>Scaling Your Web App –&nbsp;The Basics</h1>
+<p>Seh Hui, Leong <br/> August 2013, Webcamp KL</p>
+<div class="figure">
+<img alt="_images/1658521615_9c3aa234d6_b.jpg" class="fill" src="_images/1658521615_9c3aa234d6_b.jpg" />
+<p class="caption">CC-BY-SA <a class="reference external" href="http://www.flickr.com/photos/47598386&#64;N00/1658521615/">http://www.flickr.com/photos/47598386&#64;N00/1658521615/</a></p>
+</div>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+</article>
+<article class="admonition- slide level-2">
+<iframe width="640" height="360" src="http://www.youtube.com/embed/b2F-DItXtZs?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+</article>
+<article class="title-fill slide level-2" id="omg-scaling-unicorn-magic">
+<h2>OMG Scaling Unicorn Magic!</h2>
+<div class="figure">
+<img alt="_images/scaling-magic.png" class="fill" src="_images/scaling-magic.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="unless-when-it-is-not">
+<h3>… unless when it is not</h3>
+<div class="figure">
+<img alt="_images/scaling-stupidz.png" class="fill" src="_images/scaling-stupidz.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="why-you-don-t-need-scale-at-first">
+<h3>Why You Don't Need Scale… At First</h3>
+<ul>
+<li><p class="first">Because <strong>complexity will kill you sooner</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li>Initial set up time</li>
+<li>Time spent learning and/or writing tools</li>
+<li>Troubleshooting</li>
+<li>Security audits and checking</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">Besides, popular web frameworks makes it easier</p>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="what-you-really-need-to-do-first">
+<h2>What You Really Need To Do First</h2>
+<div class="figure">
+<img alt="_images/munin.png" class="fill" src="_images/munin.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="know-thy-enemy">
+<h3>Know Thy Enemy</h3>
+<ul class="simple">
+<li>Traffic/Concurrent connections</li>
+<li>Request-to-response time <em>(look out for tasks that clogs your WSGI threads)</em></li>
+<li>Development time <em>(and sometimes cost)</em></li>
+<li>CPU load</li>
+<li>… and more intertwining factors</li>
+</ul>
+
+</article>
+<article class="slide level-3" id="when-to-scale">
+<h3>When To Scale?</h3>
+<ul class="simple">
+<li>Identify the key bottleneck contributor</li>
+<li>Look for slow requests or DB queries and optimize those first</li>
+<li>Adding new servers should always be <strong>the last resort to buy time</strong> <em>(i.e. too complex to solve in short notice)</em></li>
+<li>Yes, servers are cheaper than developers, but all costs stacks</li>
+</ul>
+
+</article>
+<article class="title-fill slide level-2" id="scaling-up-a-simple-web-app-101">
+<h2>Scaling Up A Simple Web App 101</h2>
+<p>(The Hand-Wavey Edition)</p>
+<div class="figure">
+<img alt="_images/7533805968_b639d68a00_b.jpg" class="fill" src="_images/7533805968_b639d68a00_b.jpg" />
+<p class="caption">CC-BY-ND <a class="reference external" href="http://www.flickr.com/photos/65488604&#64;N02/7533805968/">http://www.flickr.com/photos/65488604&#64;N02/7533805968/</a></p>
+</div>
+
+</article>
+<article class="slide level-3" id="where-you-start">
+<h3>Where You Start</h3>
+<div class="figure">
+<img alt="_images/basic-setup.png" class="fill" src="_images/basic-setup.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="delegating-static-content-duties">
+<h3>Delegating Static Content Duties</h3>
+<div class="figure">
+<img alt="_images/setup-with-cdn.png" class="fill" src="_images/setup-with-cdn.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="adding-a-new-server">
+<h3>Adding A New Server</h3>
+<div class="figure">
+<img alt="_images/setup-with-dbserver.png" class="fill" src="_images/setup-with-dbserver.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="let-s-scale-horizontally">
+<h3>Let's Scale Horizontally!</h3>
+<div class="figure">
+<img alt="_images/setup-with-loadbalancer.png" class="fill" src="_images/setup-with-loadbalancer.png" />
+</div>
+
+</article>
+<article class="title-fill slide level-2" id="more-tricks">
+<h2>More Tricks</h2>
+<div class="figure">
+<img alt="_images/552152780_aa81e34d1a_b.jpg" class="fill" src="_images/552152780_aa81e34d1a_b.jpg" />
+<p class="caption">CC-BY-NC <a class="reference external" href="http://www.flickr.com/photos/44124453791&#64;N01/552152780/">http://www.flickr.com/photos/44124453791&#64;N01/552152780/</a></p>
+</div>
+
+</article>
+<article class="slide level-3" id="more-reads-than-writes">
+<h3>More Reads Than Writes</h3>
+<div class="figure">
+<img alt="_images/setup-with-multipledb.png" class="fill" src="_images/setup-with-multipledb.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="some-request-needs-long-processing-time">
+<h3>Some Request Needs Long Processing Time?</h3>
+<ul>
+<li><dl class="first docutils">
+<dt>Use cases</dt>
+<dd><ul class="first last simple">
+<li>Reports <em>(especially one that uses a lot of data)</em></li>
+<li>Blocking requests due to third-party services <em>(like email, notification)</em></li>
+<li>Media transcoding <em>(e.g. coverting video)</em></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Add asychronous requests to your web app/API</p>
+</li>
+</ul>
+
+</article>
+<article class="slide level-3" id="setting-up-with-background-workers">
+<h3>Setting Up with Background Workers</h3>
+<div class="figure">
+<img alt="_images/setup-with-mq.png" class="fill" src="_images/setup-with-mq.png" />
+</div>
+
+</article>
+<article class="slide level-3" id="what-about-nosql">
+<h3>What About NoSQL?</h3>
+<ul>
+<li><p class="first">Using NoSQL database ≠ scalable solution</p>
+</li>
+<li><dl class="first docutils">
+<dt><strong>Right tool for the right job</strong></dt>
+<dd><ul class="first last simple">
+<li>Document-oriented stores</li>
+<li>Column-oriented stores</li>
+<li>Graph databases</li>
+<li>Key-value stores</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="first">Fast at querying data that suits the domains of the NoSQL database</p>
+</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="congratulations-you-re-now-smarter">
+<h2>Congratulations! You're Now Smarter!</h2>
+<div class="figure">
+<img alt="_images/6966069023_5512204921_b.jpg" class="fill" src="_images/6966069023_5512204921_b.jpg" />
+<p class="caption">CC-BY <a class="reference external" href="http://www.flickr.com/photos/sylvainkalache/6966069023/">http://www.flickr.com/photos/sylvainkalache/6966069023/</a></p>
+</div>
+
+</article>
+<article class="slide level-2" id="today-you-ve-learned">
+<h2>Today You've Learned</h2>
+<ul class="simple">
+<li>Scaling should not be your first priority, monitoring is</li>
+<li>When do you really need to scale</li>
+<li>How to scale a simple web app</li>
+<li>Additional weapons to make things speedier</li>
+</ul>
+
+</article>
+<article class="slide level-2" id="tweet-me-maybe">
+<h2>Tweet Me Maybe</h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Email:</th><td class="field-body"><a class="reference external" href="mailto:felixleong&#37;&#52;&#48;gmail&#46;com">felixleong<span>&#64;</span>gmail<span>&#46;</span>com</a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Facebook:</th><td class="field-body"><a class="reference external" href="http://facebook.com/leongsh/">http://facebook.com/leongsh/</a></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Twitter:</th><td class="field-body"><a class="reference external" href="http://twitter.com/felixleong/">http://twitter.com/felixleong/</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Code, Demo, Presentation</strong></p>
+<p><a class="reference external" href="http://github.com/felixleong/wckl_webscale_talk/">http://github.com/felixleong/wckl_webscale_talk/</a></p>
+<p><strong>License</strong></p>
+<p><a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</p>
+
+</article>
+
+
+</section>
+
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '2013.08.24',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/common.js"></script>
+    <script type="text/javascript" src="_static/slides.js"></script>
+    <script type="text/javascript" src="_static/sync.js"></script>
+    <script type="text/javascript" src="_static/controller.js"></script>
+    <script type="text/javascript" src="_static/init.js"></script>
+    
+  </body>
+</html>
