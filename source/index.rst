@@ -179,7 +179,7 @@ Tweet Me Maybe
 :Facebook: http://facebook.com/leongsh/
 :Twitter: http://twitter.com/felixleong/
 
-**Code, Demo, Presentation**
+**Presentation**
 
 http://github.com/felixleong/wckl_webscale_talk/
 
